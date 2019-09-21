@@ -1,4 +1,14 @@
 /**/
-#click-camera{
+#clickCamera{
   margin-top: 7vh;
+}
+.img-fluid{
+  max-width:100%;
+  height:auto;
+}
+#imagem{
+  background-color: white;
+}
+#salvarImagem{
+  margin-left: 2vw;
 }

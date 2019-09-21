@@ -8,11 +8,7 @@
   <script src="components/loader.js"></script>
   <script src="components/jquery-3.4.1.min.js"></script>
   <script src="components/materialize.min.js"></script>
-
-  
-  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
-
+  <script src="components/html2canvas.min.js"></script>
   <script src="components/acao.js"></script>
 
   <link rel="stylesheet" href="components/loader.css">
@@ -32,17 +28,17 @@
 
   </nav>
 
-  <section id="app">
+  <section id="openCamera">
 
     <div class="row center">
-        <button class="btn-floating btn-large waves-effect waves-light pulse blue darken-4" id="click-camera"><i class="material-icons">camera</i></button>
+        <button class="btn-floating btn-large waves-effect waves-light pulse blue darken-4" id="clickCamera"><i class="material-icons">camera</i></button>
     </div>
     
   </section>
 
-  <section>
+  <section id="fotoAcoes">
 
-    <img id="imagem">
+    <img id="imagem" class="img-fluid">
 
     <form action="#" class="container">
       <p class="range-field">
@@ -51,7 +47,7 @@
       </p>
       <p class="range-field">
         Saturação:
-        <input type="range" id="saturacao" min="0" max="100" />
+        <input type="range" id="saturacao" min="0" max="200" />
       </p>
       <p class="range-field">
         Escala de cinza:
@@ -66,9 +62,13 @@
         <input type="range" id="matiz" min="0" max="360" />
       </p>
      </form>
+
+    <div class="row center">
+        <button class="waves-effect waves-light btn-large blue darken-4" id="voltar">Voltar</button>
+    </div> 
     
   </section>
-
+<div id="img-out"></div>
 </body>
 
 </html>
