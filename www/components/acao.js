@@ -22,31 +22,36 @@ $(document).on("click","#clickCamera",function(){
 });
 
 $(document).on("change","#opacidade",function(){
-  var opacidade = "opacity("+$('#opacidade').val()+"%)";
-  $("#imagem").css("filter", opacidade);
+  filtroImagem();
 });
 
 $(document).on("change","#saturacao",function(){
-  var saturacao = "saturate("+$('#saturacao').val()+"%)";
-  $("#imagem").css("filter", saturacao);
+  filtroImagem();
 });
 
 $(document).on("change","#escalacinza",function(){
-  var escalacinza = "grayscale("+$('#escalacinza').val()+"%)";
-  $("#imagem").css("filter", escalacinza);
+  filtroImagem();
 });
 
 $(document).on("change","#desfoque",function(){
-  var desfoque = "blur("+$('#desfoque').val()+"px)";
-  $("#imagem").css("filter", desfoque);
+  filtroImagem();
 });
 
 $(document).on("change","#matiz",function(){
-  var matiz = "hue-rotate("+$('#matiz').val()+"deg)";
-  $("#imagem").css("filter", matiz);
+  filtroImagem();
 });
 
 $(document).on("click","#voltar",function(){
       $("#openCamera").show();
       $("#fotoAcoes").hide();
 });
+
+function filtroImagem(change){
+  var opacidade = "opacity("+$('#opacidade').val()+"%)";
+  var saturacao = "saturate("+$('#saturacao').val()+"%)";
+  var escalacinza = "grayscale("+$('#escalacinza').val()+"%)";
+  var desfoque = "blur("+$('#desfoque').val()+"px)";
+  var matiz = "hue-rotate("+$('#matiz').val()+"deg)";
+  var filtro = opacidade + " " + saturacao + " " + escalacinza + " " + desfoque + " " + matiz;
+  $("#imagem").css("filter", filtro);
+}
